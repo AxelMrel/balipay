@@ -12,7 +12,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Original HTML template and its static assets
+    "template/**",
+    "public/**",
   ]),
+  {
+    // The template's CSS sizes images itself, so plain <img> tags are used on purpose.
+    rules: { "@next/next/no-img-element": "off" },
+  },
 ]);
 
 export default eslintConfig;
